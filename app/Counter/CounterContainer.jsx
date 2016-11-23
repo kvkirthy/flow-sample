@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import Counter from './Counter.jsx';
 import Titlebar from '../titlebar/Titlebar.jsx';

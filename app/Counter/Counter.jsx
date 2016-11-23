@@ -1,4 +1,5 @@
 // @flow
+
 import React from 'react';
 import { connect } from 'react-redux';
 
@@ -19,6 +20,9 @@ class Counter extends React.Component {
         Offset: number;
     };
 
+    increment: () => void;
+    decrement: () => void;
+
     constructor(props: CounterProps) {
         super(props);
         this.increment = this.increment.bind(this);
@@ -38,19 +42,21 @@ class Counter extends React.Component {
     render() {
         return (
             <div className="row">
-                <div className="col-sm-6">
+                <div className="col-sm-12">
                     <div className="card">
                         <div className="card-block">
                             <div className="row">
                                 <span className="col-sm-4">&nbsp; </span>
-                                <h1 className="col-sm-1">{this.props.Counter}</h1>
-                                <div>(Increment by {this.props.Offset})</div>
+                                <div className="col-sm-4 ">
+                                    <h1 className="col-sm-12 col-md-offset-5">{this.props.Counter}</h1>
+                                    <div className="col-sm-12 col-md-offset-4">(Increment by {this.props.Offset})</div>
+                                </div>                                
                                 <span className="col-sm-4">&nbsp; </span>
                             </div>
                             <div className="row">
-                                <span className="col-sm-4"><button className="col-sm-12 btn btn-primary" onClick={this.increment}> + </button></span>
-                                <h1 className="col-sm-1">&nbsp;</h1>
-                                <span className="col-sm-4"> <button className="col-sm-12 btn btn-primary" onClick={this.decrement}> - </button> </span>
+                                <span className="col-sm-5"><button className="col-sm-12 btn btn-primary" onClick={this.increment}> + </button></span>
+                                <span className="col-sm-2">&nbsp;</span>
+                                <span className="col-sm-5"> <button className="col-sm-12 btn btn-primary" onClick={this.decrement}> - </button> </span>
                             </div>
                         </div>
                     </div>
