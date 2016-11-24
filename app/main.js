@@ -15,8 +15,9 @@ const render = () => {
 
 };
 
-store.subscribe(() => {
-    console.debug('Subscribe invoked');
-});
+// store.subscribe(() => {
+//     console.debug('Subscribe invoked');
+//     //render();
+// });
 
 render();
