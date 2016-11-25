@@ -2,10 +2,6 @@
 
 import fetch from 'isomorphic-fetch';
 
-export type MessageList = {
-    messages: Array<Message>
-}
-
 export type Message = {
     MessageTitle: string,
     Author: string
