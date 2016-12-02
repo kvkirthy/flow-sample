@@ -3,7 +3,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import type { Message } from './MessageList.actions.js';
-import { GetMessageList } from './MessageList.actions.js';
 
 type MessageListProps = {
     messages?: Array<Message>,
@@ -31,34 +30,12 @@ const renderMessageList = (messages?: Array<Message>) => {
 
 const MessageList = (props: MessageListProps) => {
 
-    let redditTopicValue: string = '';
-
-    const fetchMessageList = () => {
-        if (props.dispatch != null) {
-            props.dispatch(GetMessageList(redditTopicValue));
-        }
-    }
-
-    const onRedditTopicChange = (event) => {        
-        redditTopicValue = event.target.value;
-    }
 
     return (
         <div>
             <h3>Search for topics on Reddit</h3>
             <p>This is a sample built for demonstrating Flowtype features.</p>
             <form className="form-inline">
-                <div className="form-group">
-                    <div className="input-group">
-                        <div className="input-group-addon"> Reddit Topic</div>
-                        <input className="form-control" onChange={onRedditTopicChange} id="redditTopic" type="text" />
-                    </div>
-                </div>
-                <span>&nbsp;</span>
-                <button onClick={fetchMessageList} className="btn btn-primary">Get Messages</button>
-                <br />
-                <br />
-
                 <div>Number of results {(props.messages != null) ? props.messages.length : -1}</div>
                                
                 <div className="bg-info">
